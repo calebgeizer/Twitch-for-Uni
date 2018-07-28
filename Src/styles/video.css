@@ -4,6 +4,14 @@
 	width: 700px;
 	margin: 10px 20px 10px 20px;
 	background: white;
+
+    -webkit-appearance: none;
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
 }
 
 #lectSelect {
@@ -23,8 +31,9 @@
     z-index: 1;
     position: relative;
     border-radius: 14px;
-    height: 56%;
     max-width: 890px;
+    padding-top: 56.25%;
+    margin-top: -56.25%;
 }
 
 #vidControls {
@@ -42,4 +51,30 @@
 
 #audioSlider {
 	width: 400px;
+}
+
+#progressBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: black!important;
+    cursor: pointer;
+}
+
+#progressBar::-webkit-slider-thumb:active{
+	background: grey!important;
+}
+
+#progressBar::-moz-range-thumb:active{
+	background: grey!important;
+}
+
+#progressBar::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
 }

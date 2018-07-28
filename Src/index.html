@@ -41,8 +41,22 @@
 							</div>
 						</div>
 						
-						<div id="comments" class="roundedBox">
-							I'm a comment
+						<div id="comments" class="roundedBox" style="max-height: 360px;height: -webkit-fill-available;">
+						    <div style="position: relative;z-index: 9;">
+								<button id="chatButton">Live Chat</button> 
+						        <button id="chatActive">Comments</button>
+						    </div>
+							<div id="commentField" style="">
+								<div style="height: -webkit-fill-available;">I'm a comment field</div>
+								<form id="commentForm">
+									<div id="commentInput">
+										<input value="write a comment...">
+									</div>
+									<div id="commentSubmit">
+										<button>&gt;</button>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 					
