@@ -30,15 +30,22 @@
 							<video id="video" src="" width="100%">
 							    Sorry, your browser doesn't support embedded videos.
 							</video>
-							<div id="vidControls">
-								<div style="width:40px; height:25px; overflow: hidden;">
-									<i id="playPause" class="fa fa-play" ></i>
-								</div>
-								<!--<i class="fa fa-pause"></i>-->
-								<input id="progressBar" type="range" min="1" max="100" value="50">
-								<input id="audioSlider" type="range" min="1" max="100" value="50">
-								
-							</div>
+							<span id="vidFrame">
+								<span id="vidControls" style="margin-top: 3px;border-radius: 0px;">
+									<span style="display:  flex;">
+										<button style="float: left;margin-right: 10px;background:  none;border:  none;font-size: 12pt;font-family:  inherit;">≡</button>  
+										<h3 style="margin: 0;width:  100%;display: flex;">Lecture 1, Week 1: Introduction</h3>
+									</span>
+								</span>
+								<span id="vidControls">
+									<div style="width:40px; height:25px; overflow: hidden;">
+										<i id="playPause" class="fa fa-play" ></i>
+									</div>
+									<!--<i class="fa fa-pause"></i>-->
+									<input id="progressBar" type="range" min="1" max="100" value="50">
+									<input id="audioSlider" type="range" min="1" max="100" value="50">
+								<span>
+							</span>
 						</div>
 						
 						<div id="comments" class="roundedBox" style="max-height: 360px;height: -webkit-fill-available;">
