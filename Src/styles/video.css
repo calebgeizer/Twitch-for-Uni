@@ -25,10 +25,25 @@
 	display: none;
 }
 
-#vidContorls {
+#video{
+    z-index: 1;
+    position: relative;
+    border-radius: 14px;
+    height: 56%;
+    max-width: 890px;
+}
+
+#vidControls {
 	display: flex;
-	justify-content: space-between;
-	margin: 0 30px 0 30px;
+    border-radius: 0px 0px 11px 11px;
+    position: relative;
+    justify-content: space-between;
+    margin: -42px auto 0px auto;
+    z-index: 9;
+    background: white;
+    padding: 9px 15px 6px 15px;
+    max-width: 860px;
+}
 }
 
 #audioSlider {

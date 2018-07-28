@@ -25,29 +25,27 @@
 						<div>Lecture 2</div>
 						<div>Lecture 3</div>
 					</div>
-					<div id="main">
-						<video
-							controls
-							id="video"
-							muted
-							src=""
-							width="900"
-							height="500">
-						    Sorry, your browser doesn't support embedded videos.
-						</video>
-						<div id="vidContorls">
-							<i class="fa fa-play"></i>
-							<!--<i class="fa fa-pause"></i>-->
-							<div id="progressBar">
-								<div id="progress"></div>
+					<div id="frame">
+						<div id="lectures" class="roundedBox">Lecture 1, Week 1: Introduction</div><div id="main">
+							<video controls="" id="video" muted="" src="" width="100%">
+							    Sorry, your browser doesn't support embedded videos.
+							</video>
+							<div id="vidControls">
+								<i class="fa fa-play"></i>
+								<!--<i class="fa fa-pause"></i>-->
+								<div id="progressBar">
+									<div id="progress"></div>
+								</div>
+								<input id="audioSlider" type="range" min="1" max="100" value="50">
+								
 							</div>
-							<input id="audioSlider" type="range" min="1" max="100" value="50">
-							
+						</div>
+						
+						<div id="comments" class="roundedBox">
+							I'm a comment
 						</div>
 					</div>
-					<div id="comments" class="roundedBox" >
-						I'm a comment
-					</div>
+					
 					<div>
 						<input id="videoFile" type="file" />
 					</div>
