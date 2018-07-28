@@ -161,4 +161,8 @@ body {
     #title {
     	font-size: 2em;
     }
+
+    h3 {
+    	font-size:small;
+    }
 }
