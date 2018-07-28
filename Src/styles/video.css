@@ -4,6 +4,14 @@
 	width: 700px;
 	margin: 10px 20px 10px 20px;
 	background: white;
+
+    -webkit-appearance: none;
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
 }
 
 #lectSelect {
@@ -23,23 +31,66 @@
     z-index: 1;
     position: relative;
     border-radius: 14px;
-    height: 56%;
     max-width: 890px;
 }
 
 #vidControls {
-	display: flex;
+    display: flex;
     border-radius: 0px 0px 11px 11px;
     position: relative;
     justify-content: space-between;
-    margin: -42px auto 0px auto;
     z-index: 9;
     background: white;
     padding: 9px 15px 6px 15px;
     max-width: 860px;
 }
+
+#vidFrame {
+    display: block;
+    border-radius: 0px 0px 11px 11px;
+    position: absolute;
+    justify-content: space-between;
+    z-index: 9;
+    max-width: 860px;
+    width: 100%;
+    height: 100%;
+}
+
+#vidFrame span {
+	visibility: hidden;
+}
+
+#vidFrame:hover span {
+	visibility: visible;
 }
 
 #audioSlider {
 	width: 400px;
+	height: 20px;
+}
+
+#progressBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: black!important;
+    cursor: pointer;
+}
+
+#progressBar::-webkit-slider-thumb:active{
+	background: grey!important;
+}
+
+#progressBar::-moz-range-thumb:active{
+	background: grey!important;
+}
+
+#progressBar::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
 }
