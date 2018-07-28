@@ -60,7 +60,7 @@ function playPauseToggle() {
     var inputVid = document.getElementById("video");
     var inputBtn = document.getElementById("playPause");
 
-    if (inputVid.duration != NaN) {
+    if (!inputVid.duration) {
         return;
     }
 
@@ -104,6 +104,9 @@ function setupButtons() {
 
     var inputVid = document.getElementById("video");
     inputVid.ontimeupdate = function() {updateVidProgress()};
+
+    var inputBtn = document.getElementById("playPause");
+    inputNode.addEventListener('click', playPauseToggle, false);
 }
 
 var URL = window.URL || window.webkitURL
