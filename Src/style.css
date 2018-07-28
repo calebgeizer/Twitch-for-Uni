@@ -1,0 +1,84 @@
+body {
+	flex-direction: 1;
+	justify-content: center;
+	display: flex;
+	font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin: 0;
+}
+
+#center {
+	position:relative;
+	display:inline-block;
+	width: 100%;
+	max-width: 900px;
+}
+
+#header {
+	position: relative;
+	width: 100%;
+	display: inline-block;
+	padding: 20px;
+	color: white;
+	font-size: 70px;
+	vertical-align: top;
+}
+
+#content {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+	align-items: center;
+	text-align: center;
+}
+
+#footer {
+	position: relative;
+	width: 100%;
+	background: #49075e;
+	display: block;
+	padding: 20px;
+	box-sizing: border-box;
+	color: white;
+	overflow: auto;
+}
+
+#main {
+	/*height:450px;*/
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;
+	background: #f5f5f5;
+	max-width: 600px;
+}
+
+#comments {
+	flex-grow: 1;
+	position: relative;
+	display: inline-block;
+	/*height:450px;*/
+	flex: 1;
+	width: 280px;
+	vertical-align:top;
+	box-sizing: border-box;
+	text-align: left;
+}
+
+#progressBar {
+	height: 5px;
+	width: 100%;
+}
+
+#progress {
+	height: 100%;
+	width: 20%;
+	background: rgba(200,100,100,1);
+}
+
+@media only screen and (max-width: 900px) {
+
+    #title {
+    	font-size: 2em;
+    }
+}
