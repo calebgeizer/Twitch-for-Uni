@@ -80,7 +80,7 @@ function updateSliderProgress() {
     var progressBar = document.getElementById("progressBar");
     progressBar.setAttribute("value", inputVid.currentTime);
     progressBar.setAttribute("max", inputVid.duration);
-    console.log(inputVid.currentTime);
+    // console.log(inputVid.currentTime);
 }
 
 function updateVidProgress() {
@@ -147,6 +147,7 @@ var playSelectedFile = function (event) {
 
     var fileURL = URL.createObjectURL(file)
     videoNode.src = fileURL
+    processAudio();
 }
 
 
