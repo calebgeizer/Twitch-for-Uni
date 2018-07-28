@@ -77,7 +77,10 @@ function updateVidProgress() {
     var inputVid = document.getElementById("video");
     var vidProgress = document.getElementById("progress");
 
-    vidProgress.style.width = (inputVid.currentTime * 100  / inputVid.duration) + "%"
+    var progressBar = document.getElementById("progressBar");
+    progressBar.setAttribute("value", inputVid.currentTime);
+    progressBar.setAttribute("max", inputVid.duration);
+
 }
 
 
