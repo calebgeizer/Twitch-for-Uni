@@ -36,7 +36,9 @@
 						    Sorry, your browser doesn't support embedded videos.
 						</video>
 						<div id="vidContorls">
-							<i class="fa fa-play"></i>
+							<div style="width:20px; height:20px; overflow: hidden;">
+								<i id="playPause" class="fa fa-play" onclick="playPauseToggle()" ></i>
+							</div>
 							<!--<i class="fa fa-pause"></i>-->
 							<div id="progressBar">
 								<div id="progress"></div>

@@ -53,6 +53,34 @@ function connectionTest() {
     http.send("Connection test");
 }
 
+const playClass = "fa fa-play";
+const pauseClass = "fa fa-pause";
+
+function playPauseToggle() {
+    var inputVid = document.getElementById("video");
+    var inputBtn = document.getElementById("playPause");
+
+    if (inputVid.duration != NaN) {
+        return;
+    }
+
+    if (inputVid.paused) {
+        inputBtn.className = pauseClass;
+        inputVid.play();
+    } else {
+        inputBtn.className = playClass;
+        inputVid.pause();
+    }
+}
+
+function updateVidProgress() {
+    var inputVid = document.getElementById("video");
+    var vidProgress = document.getElementById("progress");
+
+    vidProgress.style.width = (inputVid.currentTime * 100  / inputVid.duration) + "%"
+}
+
+
 
 function setupButtons() {
     // let nav = document.getElementById("navigation");
@@ -73,6 +101,9 @@ function setupButtons() {
 
     var inputNode = document.getElementById("videoFile");
     inputNode.addEventListener('change', playSelectedFile, false)
+
+    var inputVid = document.getElementById("video");
+    inputVid.ontimeupdate = function() {updateVidProgress()};
 }
 
 var URL = window.URL || window.webkitURL
