@@ -68,31 +68,31 @@ function setupButtons() {
     //     function(){toggleMachineLearning(this)}
     // );
 
-    let testResponse = document.getElementById("testResponse");
-    testResponse.addEventListener("click", function(){connectionTest()});
+    // let testResponse = document.getElementById("testResponse");
+    // testResponse.addEventListener("click", function(){connectionTest()});
 
     var inputNode = document.getElementById("videoFile");
     inputNode.addEventListener('change', playSelectedFile, false)
 }
 
-    var URL = window.URL || window.webkitURL
-    
-    var playSelectedFile = function (event) {
-        var file = this.files[0]
-        var type = file.type
-        var videoNode = document.getElementById("video");
-        var canPlay = videoNode.canPlayType(type)
-        if (canPlay === '') canPlay = 'no'
-        var message = 'Can play type "' + type + '": ' + canPlay
-        var isError = canPlay === 'no'
+var URL = window.URL || window.webkitURL
 
-        if (isError) {
-          return
-        }
+var playSelectedFile = function (event) {
+    var file = this.files[0]
+    var type = file.type
+    var videoNode = document.getElementById("video");
+    var canPlay = videoNode.canPlayType(type)
+    if (canPlay === '') canPlay = 'no'
+    var message = 'Can play type "' + type + '": ' + canPlay
+    var isError = canPlay === 'no'
 
-        var fileURL = URL.createObjectURL(file)
-        videoNode.src = fileURL
+    if (isError) {
+      return
     }
+
+    var fileURL = URL.createObjectURL(file)
+    videoNode.src = fileURL
+}
 
 
 setupButtons();

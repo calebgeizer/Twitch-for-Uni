@@ -1,0 +1,36 @@
+
+#progressBar {
+	height: 5px;
+	width: 700px;
+	margin: 10px 20px 10px 20px;
+	background: white;
+}
+
+#progress {
+	height: 100%;
+	width: 20%;
+	background: rgba(200,100,100,1);
+}
+
+#lectSelect {
+	flex-grow: 1;
+	position: relative;
+	display: inline-block;
+	/*height:450px;*/
+	flex: 1;
+	width: 280px;
+	vertical-align:top;
+	box-sizing: border-box;
+	text-align: left;
+	display: none;
+}
+
+#vidContorls {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 30px 0 30px;
+}
+
+#audioSlider {
+	width: 400px;
+}

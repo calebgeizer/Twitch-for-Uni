@@ -3,20 +3,27 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="apple-touch-icon" href="logos/icon.png">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="colors.css">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<link rel="stylesheet" type="text/css" href="styles/colors.css">
+		<link rel="stylesheet" type="text/css" href="styles/templates.css">
+		<link rel="stylesheet" type="text/css" href="styles/video.css">
+
 		<link rel="manifest" href="manifest.json">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	</head>
-	<body>
-		<div id="header" class="lime">
-			Twitch for UNI
-		</div>
+	<body class="grey">
+		
 			<div id="center">
-				<div id="testResponse" >Verify server connection</div>
+				<!--<div id="testResponse" >Verify server connection</div>-->
 				<div id="content">
-					<div>
-						
+					<div id="header" class="white">
+						<div id="title" style="float: left">COMP5000</div>
+						<div id="logo" style="float: right">Twitch for UNI</div>
+					</div>
+					<div id="lectSelect" class="roundedBox" >
+						<div>Lecture 1</div>
+						<div>Lecture 2</div>
+						<div>Lecture 3</div>
 					</div>
 					<div id="main">
 						<video
@@ -24,19 +31,21 @@
 							id="video"
 							muted
 							src=""
-							width="600"
-							height="400">
+							width="900"
+							height="500">
 						    Sorry, your browser doesn't support embedded videos.
 						</video>
-						<div id="progressBar"><div id="progress"></div></div>
-						<div>
+						<div id="vidContorls">
 							<i class="fa fa-play"></i>
-							<i class="fa fa-pause"></i>
-							<i class="fa fa-fast-backward"></i>
-							<i class="fa fa-fast-forward"></i>
+							<!--<i class="fa fa-pause"></i>-->
+							<div id="progressBar">
+								<div id="progress"></div>
+							</div>
+							<input id="audioSlider" type="range" min="1" max="100" value="50">
+							
 						</div>
 					</div>
-					<div id="comments" >
+					<div id="comments" class="roundedBox" >
 						I'm a comment
 					</div>
 					<div>
