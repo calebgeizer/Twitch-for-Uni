@@ -1,5 +1,6 @@
 body {
-	font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: 'Open Sans',"Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	color: #6F6F6F !important;
 	margin: 0;
 }
 
@@ -95,6 +96,10 @@ body {
     border-radius: 14px 14px 0px 0px;
     background:  none;
     border: none;
+
+    font-family: 'Open Sans',"Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #6F6F6F !important;
+    font-size: 14px;
 }
 
 #chatActive{
@@ -103,6 +108,10 @@ body {
     border-radius: 14px 14px 0px 0px;
     position: absolute;
     border: none;
+
+    font-family: 'Open Sans',"Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #6F6F6F !important;
+    font-size: 14px;
 }
 
 #commentField{

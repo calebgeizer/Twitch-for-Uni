@@ -10,6 +10,9 @@
 
 		<link rel="manifest" href="manifest.json">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+		
 	</head>
 	<body class="grey">
 		
@@ -44,6 +47,9 @@
 												</div>
 												<!--<i class="fa fa-pause"></i>-->
 												<input id="progressBar" type="range" min="1" max="100" value="50">
+												<svg height="25" viewBox="0 0 25 25" width="50" xmlns="http://www.w3.org/2000/svg" style="">
+													<path d="m549.125 559.8h-2.083333c-1.041667 0-1.041667 1.066667-1.041667 1.066667v4.266666s0 1.066667 1.041667 1.066667h2.083333l7.875 4.8v-16z" fill-rule="evenodd" transform="translate(-539 -551)" style="fill: #6F6F6F;"></path>
+												</svg>
 												<input id="audioSlider" type="range" min="1" max="100" value="50">
 											</span>
 										</div>
@@ -62,7 +68,22 @@
 						        <button id="chatActive">Comments</button>
 						    </div>
 							<div id="commentField" style="">
-								<div style="height: -webkit-fill-available;">I'm a comment field</div>
+								<div style="height: -webkit-fill-available;">
+									<div>
+										<p style="margin:  0px;font-size:  10pt;padding: 1em 1em 0.5em 1em;">@2:20:10 Could someone explain this to me please?</p>
+
+										<p style="margin: 0px;font-size: 8pt;padding: 0em 1.3em 1.3em 1.3em;">
+											<a href="#">like</a> • <a href="#">reply</a>
+										</p>
+									</div>
+									<div>
+										<p style="margin:  0px;font-size:  10pt;padding: 1em 1em 0.5em 1em;">@2:20:10 Could someone explain this to me please?</p>
+
+										<p style="margin: 0px;font-size: 8pt;padding: 0em 1.3em 1.3em 1.3em;">
+											<a href="#">like</a> • <a href="#">reply</a>
+										</p>
+									</div>
+								</div>
 								<form id="commentForm">
 									<div id="commentInput">
 										<input value="write a comment...">

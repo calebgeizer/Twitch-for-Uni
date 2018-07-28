@@ -1,15 +1,14 @@
 
 #progressBar {
-	height: 5px;
-	width: 700px;
-	margin: 10px 20px 10px 20px;
-	background: white;
+    height: 5px;
+    width: 700px;
+    margin: 10px 20px 10px 20px;
+    background: white;
 
     -webkit-appearance: none;
     border-radius: 5px;   
     background: #d3d3d3;
     outline: none;
-    opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
@@ -65,8 +64,47 @@
 }
 
 #audioSlider {
-	width: 400px;
-	height: 20px;
+    margin: 10px 20px 10px 20px;
+    -webkit-appearance: none;
+    width: 150px;
+    min-width: 0px;
+    height: 5px;
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+
+#audioSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    cursor: pointer;
+    background: #6F6F6F;
+
+}
+
+#audioSlider::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    cursor: pointer;
+    background: #6F6F6F;
+
+}
+
+#audioSlider::-webkit-slider-thumb:active{
+    background: #afafaf!important;
+}
+
+#audioSlider::-moz-range-thumb:active{
+    background: #afafaf!important;
 }
 
 #progressBar::-webkit-slider-thumb {
@@ -75,22 +113,24 @@
     width: 15px;
     height: 15px;
     border-radius: 50%; 
-    background: black!important;
     cursor: pointer;
-}
-
-#progressBar::-webkit-slider-thumb:active{
-	background: grey!important;
-}
-
-#progressBar::-moz-range-thumb:active{
-	background: grey!important;
+    background: #6F6F6F;
 }
 
 #progressBar::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #4CAF50;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
     cursor: pointer;
+    background: #6F6F6F;
+}
+
+#progressBar::-webkit-slider-thumb:active{
+    background: #afafaf!important;
+}
+
+#progressBar::-moz-range-thumb:active{
+    background: #afafaf!important;
 }
