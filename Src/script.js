@@ -73,17 +73,27 @@ function playPauseToggle() {
     }
 }
 
-function updateVidProgress() {
+function updateSliderProgress() {
     var inputVid = document.getElementById("video");
     var vidProgress = document.getElementById("progress");
 
     var progressBar = document.getElementById("progressBar");
     progressBar.setAttribute("value", inputVid.currentTime);
     progressBar.setAttribute("max", inputVid.duration);
-
+    console.log(inputVid.currentTime);
 }
 
+function updateVidProgress() {
+    var inputVid = document.getElementById("video");
+    var progressBar = document.getElementById("progressBar");
+    inputVid.currentTime = progressBar.value;
+}
 
+function updateAudioLevel() {
+    var inputVid = document.getElementById("video");
+    var audioSlider = document.getElementById("audioSlider");
+    inputVid.volume = audioSlider.value / 100;
+}
 
 function setupButtons() {
     // let nav = document.getElementById("navigation");
@@ -106,10 +116,18 @@ function setupButtons() {
     inputNode.addEventListener('change', playSelectedFile, false)
 
     var inputVid = document.getElementById("video");
-    inputVid.ontimeupdate = function() {updateVidProgress()};
+    inputVid.ontimeupdate = function() {updateSliderProgress()};
 
     var inputBtn = document.getElementById("playPause");
-    inputNode.addEventListener('click', playPauseToggle, false);
+    inputBtn.addEventListener('click', playPauseToggle, false);
+
+    var inputbar = document.getElementById("progressBar");
+    inputbar.addEventListener('change', updateVidProgress, false);
+    inputbar.addEventListener('input', updateVidProgress, false);
+
+    var audioSlider = document.getElementById("audioSlider");
+    audioSlider.addEventListener('change', updateAudioLevel, false);
+    audioSlider.addEventListener('input', updateAudioLevel, false);
 }
 
 var URL = window.URL || window.webkitURL
