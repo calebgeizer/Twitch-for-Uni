@@ -17,6 +17,22 @@ function httpPost(data) {
     http.send(data);
 }
 
+function displayChat(data) {
+    let p = JSON.parse(data);
+    let output = "";
+
+    for (var key in p) {
+        if (p.hasOwnProperty(key)) {
+            var inputVid = document.getElementById("video");
+            if ( parseInt(p[key]["timeStamp"]) <= inputVid.currentTime) {
+                output += "<b>" + p[key]["userName"] + "</b><Br>" + p[key]["comment"] + "<Br>";
+            }
+        }
+    }
+
+    document.getElementById("chatContent").innerHTML = output + "<Br><Br>";
+}
+
 function requestChatData() {
     var http = new XMLHttpRequest();
     var url = '';
@@ -30,6 +46,7 @@ function requestChatData() {
             // console.log(http.responseText);
             console.log("results");
             console.log(http.responseText);
+            displayChat(http.responseText);
         }
     }
     http.timeout = 2000;
@@ -135,7 +152,7 @@ function submitChat() {
     var inputNode = document.getElementById("chatInput");
     var inputVid = document.getElementById("video");
     var inputTitle = document.getElementById("lectureTitle");
-    let output =  '{"userName": "Caleb Geizer", "comment": "'+ inputNode.value +'", "lecture": "lecture1", "timeStamp": "'+ inputVid.currentTime+'"}';
+    let output =  '{"userName": "Anonymous", "comment": "'+ inputNode.value +'", "lecture": "lecture1", "timeStamp": "'+ inputVid.currentTime+'"}';
     httpPost(output);
 }
 
