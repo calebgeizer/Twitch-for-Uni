@@ -73,15 +73,34 @@ function playPauseToggle() {
     }
 }
 
+String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours+':'+minutes+':'+seconds;
+}
+
 function updateSliderProgress() {
     var inputVid = document.getElementById("video");
     var vidProgress = document.getElementById("progress");
+    var timeDiv = document.getElementById("time");
 
     var progressBar = document.getElementById("progressBar");
     progressBar.setAttribute("value", inputVid.currentTime);
     progressBar.setAttribute("max", inputVid.duration);
-    // console.log(inputVid.currentTime);
+    //console.log(inputVid.currentTime);
+
+    var seconds = inputVid.currentTime;
+    var time = seconds.toString();
+    time = time.toHHMMSS();
+    timeDiv.innerHTML = time;
 }
+
 
 function updateVidProgress() {
     var inputVid = document.getElementById("video");
