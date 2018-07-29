@@ -9,46 +9,30 @@ import StringIO
 from threading import Thread
 import sys
 import random
-
-import matplotlib
-matplotlib.use("TkAgg")
-from matplotlib import pyplot as plt
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
-from matplotlib import gridspec
-import numpy as np
-from scipy.interpolate import griddata
-
-import threading
-from threading import Thread
-
-import serial
-import threading
-import time
-import readchar
-import pylab
-import numpy as np
-import json
-import math
-import time
-
-import socket
-import time
-import datetime
 import struct
-import StringIO
-from threading import Thread
+import json
+
+chat = {}
 
 class ServerHandlerClass(SimpleHTTPServer.SimpleHTTPRequestHandler):
+
 	def _set_headers(self):
 		self.send_response(200)
 		self.send_header('Content-type', 'text/html')
 		self.end_headers()
 
 	def do_POST(self):
+		global chat
 		print "do_POST"
 		content_length = int(self.headers['Content-Length'])
 		post_data = self.rfile.read(content_length)
 		print post_data
+		if (":{" in post_data):
+			python_obj = json.loads(post_data)
+			chat.update(python_obj)
+			print "Chat History start~~~~~~~~~~"
+			print chat
+			print "Chat History end~~~~~~~~~~"
 		if ("Connection test" in post_data):
 			self.wfile.write("Response success")
 

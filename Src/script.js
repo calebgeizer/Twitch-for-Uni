@@ -14,7 +14,7 @@ function httpPost(data) {
             console.log(http.responseText);
         }
     }
-    http.send("Buzz: " + data);
+    http.send(data);
 }
 
 function updateAnalysis(currentImg) {
@@ -114,6 +114,31 @@ function updateAudioLevel() {
     inputVid.volume = audioSlider.value / 100;
 }
 
+var userSpeed = 1;
+document.onkeydown = checkKey;
+function checkKey(e) {
+    var inputVid = document.getElementById("video");
+    var event = window.event ? window.event : e;
+    switch (event.keyCode) {
+        case(39):// Right
+            userSpeed *= 1.2;
+            break;
+        case(37):// Left
+            userSpeed /= 1.2;
+            break;
+    }
+
+    inputVid.playbackRate = userSpeed;
+}
+
+function submitChat() {
+    var inputNode = document.getElementById("chatInput");
+    var inputVid = document.getElementById("video");
+    var inputTitle = document.getElementById("lectureTitle");
+    let output =  '{"' + inputVid.src + '":{"'+inputVid.currentTime+'": {"userName": "Caleb Geizer", "comment": "'+ inputNode.value +'"}}}';
+    httpPost(output);
+}
+
 function setupButtons() {
     // let nav = document.getElementById("navigation");
     // nav.getElementsByTagName("li")[0].addEventListener("click", function(){typeChosen(this)});
@@ -130,6 +155,9 @@ function setupButtons() {
 
     // let testResponse = document.getElementById("testResponse");
     // testResponse.addEventListener("click", function(){connectionTest()});
+
+    var inputNode = document.getElementById("chatSubmit");
+    inputNode.addEventListener('click', submitChat, false)
 
     var inputNode = document.getElementById("videoFile");
     inputNode.addEventListener('change', playSelectedFile, false)
@@ -166,7 +194,10 @@ var playSelectedFile = function (event) {
 
     var fileURL = URL.createObjectURL(file)
     videoNode.src = fileURL
-    processAudio();
+
+    // inputBtn.className = pauseClass;
+    // inputVid.play();
+    myTimer();
 }
 
 
