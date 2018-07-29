@@ -11,11 +11,11 @@ let countThreshold = 0;
 let state = VOICE;
 
 function voiceDetect() {
-	console.log(Math.max(...dataArray));
+	// console.log(Math.max(...dataArray));
 
 	switch(state) {
     case VOICE:
-    	console.log("There's a voice :D" + countThreshold);
+    	// console.log("There's a voice :D" + countThreshold);
   		inputVid.playbackRate = userSpeed;
   		if (countThreshold == 0) {
   			inputVid.currentTime = inputVid.currentTime - 2;
@@ -37,7 +37,7 @@ function voiceDetect() {
     case NO_VOICE:
     	// inputVid.playbackRate = 5.0;
     	inputVid.currentTime = inputVid.currentTime + 1;
-    	console.log("no voice" + countThreshold);
+    	// console.log("no voice" + countThreshold);
         
     	if (Math.max(...dataArray) > 70) {
 				countThreshold++;

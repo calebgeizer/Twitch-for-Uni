@@ -27,12 +27,15 @@ class ServerHandlerClass(SimpleHTTPServer.SimpleHTTPRequestHandler):
 		content_length = int(self.headers['Content-Length'])
 		post_data = self.rfile.read(content_length)
 		print post_data
-		if (":{" in post_data):
+		if ("{" in post_data):
 			python_obj = json.loads(post_data)
-			chat.update(python_obj)
+			chat[python_obj["timeStamp"]] = python_obj;
 			print "Chat History start~~~~~~~~~~"
-			print chat
+			print json.dumps(chat).replace("'", '"');
 			print "Chat History end~~~~~~~~~~"
+		elif ("RequestChatData" in post_data):
+			self.wfile.write(json.dumps(chat).replace("'", '"'));
+			
 		if ("Connection test" in post_data):
 			self.wfile.write("Response success")
 

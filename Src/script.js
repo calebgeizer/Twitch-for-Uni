@@ -17,7 +17,7 @@ function httpPost(data) {
     http.send(data);
 }
 
-function updateAnalysis(currentImg) {
+function requestChatData() {
     var http = new XMLHttpRequest();
     var url = '';
     http.open('POST', url, true);
@@ -28,12 +28,12 @@ function updateAnalysis(currentImg) {
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
             // console.log(http.responseText);
-            let results = document.getElementById("info");
-            results.getElementsByTagName("ul")[0].innerHTML = http.responseText;
+            console.log("results");
+            console.log(http.responseText);
         }
     }
     http.timeout = 2000;
-    http.send("Analysis: " + currentImg);
+    http.send("RequestChatData");
 }
 
 function connectionTest() {
@@ -116,7 +116,7 @@ function submitChat() {
     var inputNode = document.getElementById("chatInput");
     var inputVid = document.getElementById("video");
     var inputTitle = document.getElementById("lectureTitle");
-    let output =  '{"' + inputVid.src + '":{"'+inputVid.currentTime+'": {"userName": "Caleb Geizer", "comment": "'+ inputNode.value +'"}}}';
+    let output =  '{"userName": "Caleb Geizer", "comment": "'+ inputNode.value +'", "lecture": "lecture1", "timeStamp": "'+ inputVid.currentTime+'"}';
     httpPost(output);
 }
 
@@ -180,6 +180,13 @@ var playSelectedFile = function (event) {
     // inputVid.play();
     myTimer();
 }
+
+function updateChat() {
+    requestChatData();
+    setTimeout(updateChat, 1000);
+}
+
+updateChat();
 
 
 setupButtons();
