@@ -174,4 +174,8 @@ body {
     h3 {
     	font-size:small;
     }
+
+    .bottom{
+    	padding-right: 0px !important;
+    }
 }

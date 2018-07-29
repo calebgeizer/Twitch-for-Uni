@@ -29,7 +29,10 @@
 						<div>Lecture 3</div>
 					</div>
 					<div id="frame">
-						<div id="lectures" class="roundedBox">Lecture 1, Week 1: Introduction</div>
+						<div style="width: 21%;float: left;">
+							<div id="lectures" class="roundedBox" style="background: #A1B7E5;text-align: center;color: white!important;border-radius: 14px;">Lecture 1, Week 1: Introduction</div>
+							<div id="lectures" class="roundedBox" style="text-align: center;border-radius: 14px;margin-top: 20px;">Lecture 2, Week 2</div>
+					    </div>
 						<div id="main">
 							<span id="vidFrame">
 								<div style="height:100%;">
@@ -62,26 +65,17 @@
 						</div>
 
 						
-						<div id="comments" class="roundedBox" style="max-height: 360px;height: -webkit-fill-available;">
-						    <div style="position: relative;z-index: 9;">
-								<button id="chatButton">Live Chat</button> 
-						        <button id="chatActive">Comments</button>
+						<div id="comments" class="roundedBox" style="max-height: 360px;height: -webkit-fill-available;background: white;">
+						    <div style="position: relative;z-index: 9;width:  100%;background:  #A1B7E5;text-align:  center;color: white!important;border-radius: 14px;">
+								<button id="chatButton" style="color: white!important;">Live Chat</button> 
 						    </div>
-							<div id="commentField" style="">
-								<div style="height: -webkit-fill-available;">
-									<div>
-										<p style="margin:  0px;font-size:  10pt;padding: 1em 1em 0.5em 1em;">@2:20:10 Could someone explain this to me please?</p>
-
-										<p style="margin: 0px;font-size: 8pt;padding: 0em 1.3em 1.3em 1.3em;">
-											<a href="#">like</a> • <a href="#">reply</a>
-										</p>
+							<div id="commentField">
+								<div style="height: -webkit-fill-available;bottom:  0px;">
+									<div style="position:  absolute;bottom: 80px;">
+										<p style="margin:  0px;font-size:  10pt;padding: 1em 1em 0.5em 1em;">Could someone explain this to me please?</p>
 									</div>
-									<div>
-										<p style="margin:  0px;font-size:  10pt;padding: 1em 1em 0.5em 1em;">@2:20:10 Could someone explain this to me please?</p>
-
-										<p style="margin: 0px;font-size: 8pt;padding: 0em 1.3em 1.3em 1.3em;">
-											<a href="#">like</a> • <a href="#">reply</a>
-										</p>
+									<div style="position:  absolute;bottom: 30px;">
+										<p style="margin:  0px;font-size:  10pt;padding: 1em 1em 0.5em 1em;">Could someone explain this to me please?</p>
 									</div>
 								</div>
 								<form id="commentForm">
@@ -98,6 +92,33 @@
 					
 					<div>
 						<input id="videoFile" type="file" />
+					</div>
+					<div id="commentField" class="bottom" style="">
+					    <h3>2 Comments</h3>
+						<form id="commentForm" style="margin-top: 0px;">
+							<div id="commentInput">
+								<input value="write a comment...">
+							</div>
+							<div id="commentSubmit">
+								<button>&gt;</button>
+							</div>
+						</form><div style="height: -webkit-fill-available;">
+							<div>
+								<p style="margin:  0px;font-size:  10pt;padding: 1em 1em 0.5em 1em;">@2:20:10 Could someone explain this to me please?</p>
+
+								<p style="margin: 0px;font-size: 8pt;padding: 0em 1.3em 1.3em 1.3em;">
+									<a href="#">like</a> • <a href="#">reply</a>
+								</p>
+							</div>
+							<div>
+								<p style="margin:  0px;font-size:  10pt;padding: 1em 1em 0.5em 1em;">@2:20:10 Could someone explain this to me please?</p>
+
+								<p style="margin: 0px;font-size: 8pt;padding: 0em 1.3em 1.3em 1.3em;">
+									<a href="#">like</a> • <a href="#">reply</a>
+								</p>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 		</div>

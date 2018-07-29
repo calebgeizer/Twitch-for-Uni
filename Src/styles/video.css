@@ -99,6 +99,14 @@
 
 }
 
+.bottom{
+    background: none!important;
+    max-width: 640px;
+    margin: auto;
+    text-align: left;
+    padding-right: 70px;
+}
+
 #audioSlider::-webkit-slider-thumb:active{
     background: #afafaf!important;
 }
